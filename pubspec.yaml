@@ -40,6 +40,10 @@ dependencies:
   url_launcher: ^6.1.11
   flutter_map: ^4.0.0
   latlong2: ^0.8.2
+  syncfusion_flutter_datepicker: ^21.2.8
+  intl: ^0.18.1
+
+
 
 dev_dependencies:
   flutter_test:

@@ -21,6 +21,7 @@ class _LoginPageState extends State<LoginPage> {
         padding: const EdgeInsets.only(left: 40, right: 40, bottom: 60),
         color: Colors.white,
         child: Column(
+          mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const CircleAvatar(

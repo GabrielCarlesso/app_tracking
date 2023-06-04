@@ -1,7 +1,6 @@
-//import 'package:app_tracking/pages/map_page.dart';
+import 'package:app_tracking/pages/login_page.dart';
 import 'package:flutter/material.dart';
-import 'pages/login_page.dart';
-//import 'package:flutter_config/flutter_config.dart';
+//import 'pages/login_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Tracking app',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),

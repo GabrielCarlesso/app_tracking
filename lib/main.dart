@@ -1,4 +1,5 @@
-import 'package:app_tracking/pages/login_page.dart';
+//import 'package:app_tracking/pages/login_page.dart';
+import 'package:app_tracking/pages/map_page.dart';
 import 'package:flutter/material.dart';
 //import 'pages/login_page.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const LoginPage(),
+      home: const MapPage(),
     );
   }
 }

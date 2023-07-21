@@ -17,10 +17,17 @@ class _MapPageState extends State<MapPage> {
   final DateRangePickerController _datePickerController =
       DateRangePickerController();
 
-  double lat = -29.692830906329835, long = -53.80942938166916;
-  LatLng point = LatLng(-29.692830906329835, -53.80942938166916);
+  double lat = -27.863127802787478, long = -54.47114119114327;
+
   List<LatLng> listaPoints = [
-    LatLng(-29.692830906329835, -53.80942938166916),
+    LatLng(-27.863127802787478, -54.47114119114327),
+  ];
+
+  List<LatLng> cercaVirtual = [
+    LatLng(-27.863127802787478, -54.47114119114327),
+    LatLng(-27.862207562732074, -54.466914454584234),
+    LatLng(-27.870656746169345, -54.469516736427934),
+    LatLng(-27.866146285430734, -54.47461677133878),
   ];
 
   @override
@@ -80,12 +87,20 @@ class _MapPageState extends State<MapPage> {
                   markers: markers,
                 ),
                 */
+              PolygonLayer(polygons: [
+                Polygon(
+                  points: cercaVirtual,
+                  isFilled: false,
+                  borderColor: Colors.red,
+                  borderStrokeWidth: 4,
+                ),
+              ]),
               PolylineLayer(
                 polylines: [
                   Polyline(
                       points: listaPoints, color: Colors.blue, strokeWidth: 5)
                 ],
-              )
+              ),
             ],
           ),
         ),

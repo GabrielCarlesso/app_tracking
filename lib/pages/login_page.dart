@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:app_tracking/pages/map_page.dart';
 
@@ -96,7 +94,6 @@ class _LoginPageState extends State<LoginPage> {
     String ip = _ipController.text;
     String id = _idController.text;
     debugPrint('ip: $ip e id: $id');
-    log('log : id:$id e ip:$id');
 
     Navigator.of(context).pushReplacement(MaterialPageRoute(
       builder: (context) => const MapPage(),

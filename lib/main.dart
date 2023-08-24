@@ -1,13 +1,15 @@
-//import 'package:app_tracking/pages/login_page.dart';
-import 'package:app_tracking/pages/map_page.dart';
+import 'package:app_tracking/pages/set_virtual_fence.dart';
+import 'package:app_tracking/shared/property.dart';
 import 'package:flutter/material.dart';
-//import 'pages/login_page.dart';
+// ignore: depend_on_referenced_packages
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+//import 'auth/auth_verify.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   //await FlutterConfig.loadEnvVariables();
 
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const MapPage(),
+      home: VirtualFencePage(property: Property("Casa1")),
     );
   }
 }

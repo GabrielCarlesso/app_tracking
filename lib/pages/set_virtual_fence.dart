@@ -1,14 +1,19 @@
 import 'dart:developer';
 // ignore: depend_on_referenced_packages
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import '../shared/property.dart';
 
-class VirtualFencePage extends StatelessWidget {
-  final Property property;
-  const VirtualFencePage({super.key, required this.property});
+class VirtualFencePage extends StatefulWidget {
+  const VirtualFencePage({super.key});
+
+  @override
+  _VirtualFencePageState createState() => _VirtualFencePageState();
+}
+
+class _VirtualFencePageState extends State<VirtualFencePage> {
+  Property property = Property("Casa1");
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,9 @@ class VirtualFencePage extends StatelessWidget {
         options: MapOptions(
           onTap: (position, point) {
             log("TapPosition: $position \n point: $point");
-            property.cercaVirtual.add(point);
+            setState(() {
+              property.cercaVirtual.add(point);
+            });
           },
           center: LatLng(-29.692830906329835, -53.80942938166916),
           zoom: 14.5,
@@ -28,13 +35,37 @@ class VirtualFencePage extends StatelessWidget {
             urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
             userAgentPackageName: 'dev.fleaflet.flutter_map.example',
           ),
-          GetBuilder<Property>(builder: (context) {
-            return MarkerLayer(
-              markers: toMarkersList(property.cercaVirtual),
-            );
-          }),
+          MarkerLayer(
+            markers: toMarkersList(property.cercaVirtual),
+          ),
+          if (property.cercaVirtual.length == 2)
+            PolylineLayer(
+              polylines: [
+                Polyline(
+                  points: property.cercaVirtual,
+                  strokeWidth: 4,
+                  color: Colors.green,
+                )
+              ],
+            ),
+          if (property.cercaVirtual.length > 2)
+            PolygonLayer(polygons: [
+              Polygon(
+                points: property.cercaVirtual,
+                borderColor: Colors.green,
+                borderStrokeWidth: 4,
+              )
+            ])
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              property.cercaVirtual.clear();
+            });
+          },
+          child: Icon(Icons.cancel),
+          backgroundColor: Colors.red),
     );
   }
 
@@ -48,7 +79,7 @@ class VirtualFencePage extends StatelessWidget {
           point: latlng,
           builder: (ctx) => const Icon(
                 Icons.location_on,
-                color: Colors.red,
+                color: Colors.green,
                 size: 30,
               )));
     }

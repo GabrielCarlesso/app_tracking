@@ -1,3 +1,5 @@
+/* 
+
 // ignore: depend_on_referenced_packages
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 // ignore: depend_on_referenced_packages
@@ -33,3 +35,5 @@ class AuthController extends StateNotifier<AuthState> {
     state = AuthState.idle;
   }
 }
+
+*/

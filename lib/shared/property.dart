@@ -10,7 +10,11 @@ class Property extends GetxController {
 
   void addPoint(LatLng point) {
     cercaVirtual.add(point);
-    cercaVirtual.sort((a, b) => a.latitude.compareTo(b.latitude));
+
     update();
+  }
+
+  void ordenarPoitns() {
+    cercaVirtual.sort((a, b) => a.latitude.compareTo(b.latitude));
   }
 }

@@ -13,4 +13,19 @@ class Property {
   void ordenarPoitns() {
     cercaVirtual.sort((a, b) => a.latitude.compareTo(b.latitude));
   }
+
+  LatLng getPropertyCenter() {
+    double centerX = 0.0;
+    double centerY = 0.0;
+
+    for (LatLng vertex in cercaVirtual) {
+      centerX += vertex.latitude;
+      centerY += vertex.longitude;
+    }
+
+    centerX /= cercaVirtual.length;
+    centerY /= cercaVirtual.length;
+
+    return LatLng(centerX, centerY);
+  }
 }

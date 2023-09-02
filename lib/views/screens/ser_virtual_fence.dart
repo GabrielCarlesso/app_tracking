@@ -26,7 +26,7 @@ class _VirtualFencePageState extends State<VirtualFencePage> {
               property.cercaVirtual.add(point);
             });
           },
-          center: const LatLng(-29.692830906329835, -53.80942938166916),
+          center: LatLng(-29.692830906329835, -53.80942938166916),
           zoom: 14.5,
         ),
         children: [
@@ -64,7 +64,7 @@ class _VirtualFencePageState extends State<VirtualFencePage> {
             });
           },
           backgroundColor: Colors.red,
-          child: const Icon(Icons.cancel)),
+          child: const Icon(Icons.delete)),
     );
   }
 

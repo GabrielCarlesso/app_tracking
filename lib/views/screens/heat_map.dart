@@ -38,11 +38,11 @@ class _HeatMapPageState extends State<HeatMapPage> {
   @override
   Widget build(BuildContext context) {
     GridUtils grid = GridUtils(centerMap);
-    //Weigth ente 0 e 2
-    double weigth = 0.2;
+
+    double weigth = 0.222; //Weigth ente 0 e 2
     for (int i = 0; i < grid.centerPoints.length; i++) {
       for (int j = 0; j < grid.centerPoints.length; j++) {
-        data.add(WeightedLatLng(grid.centerPoints[i][j], (weigth * i)));
+        data.add(WeightedLatLng(grid.centerPoints[i][j], (weigth * j)));
       }
     }
 
@@ -50,8 +50,9 @@ class _HeatMapPageState extends State<HeatMapPage> {
       body: FlutterMap(
         options: MapOptions(
             center: centerMap,
-            zoom: 18,
+            zoom: 18.4,
             maxZoom: 18.4,
+            minZoom: 18.0,
             onTap: (position, point) {
               log("TapPosition: ${position.global} \n point: $point\n Tap to latlng: ");
             }),
@@ -66,14 +67,16 @@ class _HeatMapPageState extends State<HeatMapPage> {
               heatMapDataSource: InMemoryHeatMapDataSource(data: data),
               heatMapOptions: HeatMapOptions(radius: 60, layerOpacity: 0.7),
             ),
-          PolylineLayer(
-            polylines: [
-              for (int i = 0; i < grid.grid.length; i++)
-                Polyline(points: grid.getGridRow(i)),
-              for (int i = 0; i < grid.grid.length; i++)
-                Polyline(points: grid.getGridColumn(i)),
-            ],
-          ),
+/*
+            PolylineLayer(
+              polylines: [
+                for (int i = 0; i < grid.grid.length; i++)
+                  Polyline(points: grid.getGridRow(i)),
+                for (int i = 0; i < grid.grid.length; i++)
+                  Polyline(points: grid.getGridColumn(i)),
+              ],
+            ),
+*/
         ],
       ),
     );

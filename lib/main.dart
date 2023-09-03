@@ -18,10 +18,13 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'App Tracking',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.lightGreen),
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.lightGreen,
+        ),
         useMaterial3: true,
       ),
-      home: HeatMapPage(),
+      home: const HeatMapPage(),
     );
   }
 }

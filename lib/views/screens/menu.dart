@@ -116,10 +116,11 @@ class _MenuPageState extends State<MenuPage> {
         image: AssetImage("assets/images/cow.png"), width: 24, height: 24);
   }
 
-  Widget buttonsMenu(
-      {required String text,
-      required Widget icon,
-      required void Function() bottomFunction}) {
+  Widget buttonsMenu({
+    required String text,
+    required Widget icon,
+    required void Function() bottomFunction,
+  }) {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0, right: 8.0, left: 8.0),
       child: ElevatedButton.icon(
@@ -132,7 +133,10 @@ class _MenuPageState extends State<MenuPage> {
             textStyle: const TextStyle(fontSize: 20),
           ),
           icon: icon,
-          label: Text(text)),
+          label: Text(
+            text,
+            maxLines: 2,
+          )),
     );
   }
 

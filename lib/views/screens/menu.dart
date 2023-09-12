@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:track_app/model/property.dart';
 import 'package:track_app/shared/app_colors.dart';
 import 'package:track_app/shared/app_settings.dart';
+import 'package:track_app/views/screens/heat_map.dart';
+import 'package:track_app/views/screens/set_virtual_fence.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({Key? key}) : super(key: key);
@@ -47,15 +50,16 @@ class _MenuPageState extends State<MenuPage> {
                 Flexible(
                   flex: 2,
                   child: buttonsMenu(
-                    text: "Nova propriedade",
-                    icon: const Icon(Icons.add_box_sharp, size: 18),
-                  ),
+                      text: "Nova propriedade",
+                      icon: const Icon(Icons.add_box_sharp, size: 18),
+                      bottomFunction: go2newProperty),
                 ),
                 Flexible(
                   flex: 2,
                   child: buttonsMenu(
                     text: "Relatório",
                     icon: const Icon(Icons.map_outlined, size: 18),
+                    bottomFunction: go2heatMap,
                   ),
                 ),
               ],
@@ -112,11 +116,14 @@ class _MenuPageState extends State<MenuPage> {
         image: AssetImage("assets/images/cow.png"), width: 24, height: 24);
   }
 
-  Widget buttonsMenu({required String text, required Widget icon}) {
+  Widget buttonsMenu(
+      {required String text,
+      required Widget icon,
+      required void Function() bottomFunction}) {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0, right: 8.0, left: 8.0),
       child: ElevatedButton.icon(
-          onPressed: () {},
+          onPressed: bottomFunction,
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
             backgroundColor: AppColors.greenLight, // foreground
@@ -127,5 +134,15 @@ class _MenuPageState extends State<MenuPage> {
           icon: icon,
           label: Text(text)),
     );
+  }
+
+  void go2newProperty() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const VirtualFencePage()));
+  }
+
+  void go2heatMap() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const HeatMapPage()));
   }
 }

@@ -47,6 +47,9 @@ class _HeatMapPageState extends State<HeatMapPage> {
     }
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Heat map"),
+      ),
       body: FlutterMap(
         options: MapOptions(
             center: centerMap,

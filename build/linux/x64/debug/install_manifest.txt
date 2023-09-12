@@ -1,0 +1,15 @@
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/track_app
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/data/icudtl.dat
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/cow.png
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/login_photo.png
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.json
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/data/flutter_assets/version.json
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/data/flutter_assets/packages/flutter_map/lib/assets/flutter_map_logo.png
+/home/gabriel/projetos/app_tracking/build/linux/x64/debug/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
